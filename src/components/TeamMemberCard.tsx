@@ -3,7 +3,15 @@
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
 import ShowChartRoundedIcon from "@mui/icons-material/ShowChartRounded";
-import { Avatar, Box, Button, Card, Stack, Typography, alpha } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  Stack,
+  Typography,
+  alpha,
+} from "@mui/material";
 import { useState } from "react";
 import ScheduleOneOnOneDialog from "@/components/ScheduleOneOnOneDialog";
 import { TeamMember } from "@/data/mockData";
@@ -41,7 +49,8 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
         p: { xs: 2, sm: 2.5 },
         borderColor: isCritical ? alpha("#E11D48", 0.4) : "#E2E8F0",
         borderRadius: "12px",
-        boxShadow: "0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04)",
+        boxShadow:
+          "0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04)",
       }}
     >
       <Box
@@ -55,11 +64,15 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
           },
         }}
       >
-        <Stack direction="row" spacing={1.5} sx={{ alignItems: "center", minWidth: 0 }}>
+        <Stack
+          direction="row"
+          spacing={1.5}
+          sx={{ alignItems: "center", minWidth: 0 }}
+        >
           <Avatar
             src={member.avatarUrl}
             alt=""
-            imgProps={{ loading: "lazy" }}
+            slotProps={{ img: { loading: "lazy" } }}
             sx={{
               width: 48,
               height: 48,
@@ -82,10 +95,19 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
             >
               {member.name}
             </Typography>
-            <Typography sx={{ color: "#64748b", fontSize: 13, mt: 0.35, wordBreak: "break-word" }}>
+            <Typography
+              sx={{
+                color: "#64748b",
+                fontSize: 13,
+                mt: 0.35,
+                wordBreak: "break-word",
+              }}
+            >
               {member.role}
             </Typography>
-            <Typography sx={{ color: "#94a3b8", fontSize: 12, mt: 0.45, lineHeight: 1.4 }}>
+            <Typography
+              sx={{ color: "#94a3b8", fontSize: 12, mt: 0.45, lineHeight: 1.4 }}
+            >
               Last check-in: {member.lastCheckIn}
             </Typography>
           </Box>
@@ -110,7 +132,9 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
             sx={{ flexWrap: "wrap", rowGap: 0.5 }}
           >
             {isCritical ? (
-              <ErrorOutlineRoundedIcon sx={{ fontSize: 18, color: "#E11D48", flexShrink: 0 }} />
+              <ErrorOutlineRoundedIcon
+                sx={{ fontSize: 18, color: "#E11D48", flexShrink: 0 }}
+              />
             ) : null}
             <Typography
               component="span"
@@ -126,7 +150,10 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
             >
               Stress level
             </Typography>
-            <ShowChartRoundedIcon sx={{ fontSize: 18, color, flexShrink: 0 }} aria-hidden />
+            <ShowChartRoundedIcon
+              sx={{ fontSize: 18, color, flexShrink: 0 }}
+              aria-hidden
+            />
           </Stack>
           <Typography
             sx={{
@@ -146,7 +173,11 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
           variant={isCritical ? "contained" : "outlined"}
           color={isCritical ? "error" : "inherit"}
           size="small"
-          startIcon={isCritical ? <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 17 }} /> : undefined}
+          startIcon={
+            isCritical ? (
+              <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 17 }} />
+            ) : undefined
+          }
           onClick={() => {
             if (opensScheduleModal) {
               setScheduleOpen(true);

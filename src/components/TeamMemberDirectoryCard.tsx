@@ -111,7 +111,7 @@ export default function TeamMemberDirectoryCard({
             <Avatar
               src={member.avatarUrl}
               alt={member.name}
-              imgProps={{ loading: "lazy" }}
+              slotProps={{ img: { loading: "lazy" } }}
               sx={{
                 width: 48,
                 height: 48,
