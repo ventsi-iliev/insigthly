@@ -72,7 +72,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
           <Avatar
             src={member.avatarUrl}
             alt=""
-            slotProps={{ img: { loading: "lazy" as const } }}
+            slotProps={{ img: { loading: "lazy" } }}
             sx={{
               width: 48,
               height: 48,
