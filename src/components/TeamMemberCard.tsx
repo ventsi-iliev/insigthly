@@ -72,7 +72,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
           <Avatar
             src={member.avatarUrl}
             alt=""
-            slotProps={{ img: { loading: "lazy" } }}
+            slotProps={{ img: { loading: "lazy" as const } }}
             sx={{
               width: 48,
               height: 48,
@@ -126,10 +126,13 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
         >
           <Stack
             direction="row"
-            alignItems="center"
-            justifyContent="center"
             spacing={0.75}
-            sx={{ flexWrap: "wrap", rowGap: 0.5 }}
+            sx={{
+              alignItems: "center",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              rowGap: 0.5,
+            }}
           >
             {isCritical ? (
               <ErrorOutlineRoundedIcon
