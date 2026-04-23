@@ -48,7 +48,7 @@ export default function MonthlyCheckInPage() {
   return (
     <RequireAuth>
       <AppShell>
-        <Container size="md">
+        <Container maxWidth="md">
           <Typography variant="h5">Monthly Reflection</Typography>
           <Typography variant="body2" sx={{ mb: 2.5, maxWidth: 720 }}>
             Take a moment to deeply reflect on the past month. Your insights
