@@ -64,7 +64,7 @@ export default function HistoryLogsPage() {
   return (
     <RequireAuth>
       <AppShell>
-        <Container size="md">
+        <Container maxWidth="md">
           <Typography variant="h5">History Logs</Typography>
           <Typography variant="body2" sx={{ mb: 2 }}>
             Review your past check-ins to identify patterns over time.
