@@ -98,7 +98,9 @@ export default function ScheduleOneOnOneDialog({
               placeholder="dd.mm.yyyy"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              inputProps={{ "aria-label": "Select date" }}
+              slotProps={{
+                htmlInput: { "aria-label": "Select date" },
+              }}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: 1.5,
@@ -121,7 +123,9 @@ export default function ScheduleOneOnOneDialog({
               placeholder="--:--"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              inputProps={{ "aria-label": "Select time" }}
+              slotProps={{
+                htmlInput: { "aria-label": "Select time" },
+              }}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: 1.5,
