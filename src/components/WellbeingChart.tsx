@@ -10,6 +10,7 @@ import {
   LineChart,
   ResponsiveContainer,
   Tooltip,
+  type TooltipContentProps,
   XAxis,
   YAxis,
 } from "recharts";
@@ -28,17 +29,11 @@ const defaultVisible: Record<MetricKey, boolean> = {
 
 const LINE_STROKE = "#1D4D4F";
 
-type OverallTooltipProps = {
-  active?: boolean;
-  payload?: { value?: number }[];
-  label?: string | number;
-};
-
-function OverallTooltip({ active, payload, label }: OverallTooltipProps) {
+function OverallTooltip({ active, payload, label }: TooltipContentProps) {
   if (!active || !payload?.length || label == null) {
     return null;
   }
-  const v = payload[0].value;
+  const v = payload[0]?.value;
   return (
     <Box
       sx={{
