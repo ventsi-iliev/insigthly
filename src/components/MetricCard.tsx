@@ -5,13 +5,20 @@ import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import VideocamRoundedIcon from "@mui/icons-material/VideocamRounded";
 import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
-import type { SvgIconComponent } from "@mui/material/SvgIcon";
+import {
+  Box,
+  Card,
+  CardContent,
+  Stack,
+  Typography,
+  type SvgIconProps,
+} from "@mui/material";
+import type { ComponentType } from "react";
 import type { WellbeingCardIcon } from "@/data/mockData";
 
 const METRIC_ICONS: Record<
   WellbeingCardIcon,
-  { Icon: SvgIconComponent; color: string }
+  { Icon: ComponentType<SvgIconProps>; color: string }
 > = {
   medal: { Icon: EmojiEventsRoundedIcon, color: "#0C9D72" },
   camera: { Icon: VideocamRoundedIcon, color: "#2563eb" },
